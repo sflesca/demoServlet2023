@@ -1,6 +1,6 @@
 package com.example.demoservlet.servlets;
 
-import com.example.demoservlet.model.Prodotto;
+import com.example.demoservlet.model.ProdottoOld;
 import jakarta.annotation.Resource;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -11,7 +11,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import javax.sql.DataSource;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,7 +27,7 @@ public class ProdottiMVC extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Prodotto> prodotti = getProdotti();
+        List<ProdottoOld> prodotti = getProdotti();
         request.setAttribute("prodotti", prodotti);
         gotoPage("/prodotti.jsp",request,response);
     }
@@ -44,8 +43,8 @@ public class ProdottiMVC extends HttpServlet {
     }
 
 
-    private List<Prodotto> getProdotti() {
-        List<Prodotto> prodotti = new LinkedList<>();
+    private List<ProdottoOld> getProdotti() {
+        List<ProdottoOld> prodotti = new LinkedList<>();
         Connection con = null;
         Statement st = null;
         ResultSet rs = null;
@@ -55,7 +54,7 @@ public class ProdottiMVC extends HttpServlet {
             rs = st.executeQuery("select id, nome, prezzo from prodotti");
 
             while (rs.next()) {
-                prodotti.add(new Prodotto(rs.getInt(1), rs.getString(2), rs.getDouble(3)));
+                prodotti.add(new ProdottoOld(rs.getInt(1), rs.getString(2), rs.getDouble(3)));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

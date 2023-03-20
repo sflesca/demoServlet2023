@@ -8,5 +8,27 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/testdb</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="default/Hibernate" uuid="27e141f7-b2e4-4711-a906-0bbbdd2d1f1c">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/sfles/IdeaProjects/demoServlet/src/main/resources/META-INF/persistence.xml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/psw2023</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="jdbc/postgres" uuid="35e800ec-e589-474d-b66f-bdcaec941adb">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Tomcat.Resource
+
+C:/Users/sfles/IdeaProjects/demoServlet/src/main/webapp/META-INF/context.xml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/testdb</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

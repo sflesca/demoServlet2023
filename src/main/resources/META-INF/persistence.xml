@@ -6,9 +6,15 @@
     <persistence-unit name="default">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>com.example.demoservlet.model.ProvaEntity</class>
+        <class>com.example.demoservlet.model.Persona</class>
+        <class>com.example.demoservlet.model.Cliente</class>
+        <class>com.example.demoservlet.model.Categoria</class>
+        <class>com.example.demoservlet.model.Prodotto</class>
+        <class>com.example.demoservlet.model.Ordine</class>
+        <class>com.example.demoservlet.model.DettaglioOrdine</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.transaction.flush_before_completion" value="true"/>

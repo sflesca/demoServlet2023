@@ -35,6 +35,7 @@ public class HelloServlet extends HttpServlet {
         ProvaEntity pe = new ProvaEntity();
         pe.setNome("ciao");
         em.persist(pe);
+        pe.setNome("pippo");
         em.getTransaction().commit();
         out.println("</body></html>");
     }

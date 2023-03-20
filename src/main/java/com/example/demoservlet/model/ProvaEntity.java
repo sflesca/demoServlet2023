@@ -3,7 +3,7 @@ package com.example.demoservlet.model;
 import jakarta.persistence.*;
 
 @Entity
-@NamedQueries({@NamedQuery(name="getProva", query="select c from ProvaEntity c")})
+@NamedQueries({@NamedQuery(name="getProva", query="select c from Ordine c")})
 public class ProvaEntity {
     @Id
     @GeneratedValue
@@ -26,4 +26,8 @@ public class ProvaEntity {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+
+    @Version
+    private long version;
 }

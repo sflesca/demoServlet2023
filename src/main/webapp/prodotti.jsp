@@ -9,13 +9,14 @@
 <html>
 <head>
     <title>Title</title>
-    <%@page import="com.example.demoservlet.model.Prodotto"%>
-    <jsp:useBean id="prodotti" scope="request" class="java.util.LinkedList" type="java.util.LinkedList<com.example.demoservlet.model.Prodotto>"/>
+    <%@page import="com.example.demoservlet.model.ProdottoOld"%>
+    <%@ page import="com.example.demoservlet.model.ProdottoOld" %>
+    <jsp:useBean id="prodotti" scope="request" class="java.util.LinkedList" type="java.util.LinkedList<com.example.demoservlet.model.ProdottoOld>"/>
 </head>
 <body>
 <h1>Lista Prodotti</h1>
 <ul>
-    <% for (Prodotto p:prodotti){ %>
+    <% for (ProdottoOld p:prodotti){ %>
     <li><a href="DettagliProdotto?idp=<%=p.getId()%>"> <%=p.getId()%></a>, <%=p.getNome()%>, <%=p.getPrezzo()%></li>
     <%}%>
 </ul>

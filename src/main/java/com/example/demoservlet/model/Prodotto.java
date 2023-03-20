@@ -1,8 +1,22 @@
 package com.example.demoservlet.model;
 
-public class Prodotto {
-    private int id;
+import jakarta.persistence.*;
 
+@Entity
+public class Prodotto {
+    @GeneratedValue
+    @Id
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Basic
     private String nome;
 
     public String getNome() {
@@ -13,31 +27,36 @@ public class Prodotto {
         this.nome = nome;
     }
 
-    public double getPrezzo() {
+    @Basic
+    private Double prezzo;
+
+    public Double getPrezzo() {
         return prezzo;
     }
 
-    public Prodotto(int id, String nome, double prezzo) {
-        this.id = id;
-        this.nome = nome;
+    public void setPrezzo(Double prezzo) {
         this.prezzo = prezzo;
     }
 
-    public void setPrezzo(double prezzo) {
-        this.prezzo = prezzo;
+    @Basic
+    private Integer qta;
+
+    public Integer getQta() {
+        return qta;
     }
 
-    public int getId() {
-        return id;
+    public void setQta(Integer qta) {
+        this.qta = qta;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    @ManyToOne(optional = false)
+    private Categoria categoria;
+
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    private double prezzo;
-
-    public Prodotto() {
-
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }

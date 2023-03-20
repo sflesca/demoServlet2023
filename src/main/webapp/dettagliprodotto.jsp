@@ -9,12 +9,12 @@
 <html>
 <head>
     <title>Title</title>
-    <%@page import="com.example.demoservlet.model.Prodotto"%>
-    <jsp:useBean id="prodotto" scope="request" class="com.example.demoservlet.model.Prodotto" />
+    <%@page import="com.example.demoservlet.model.ProdottoOld"%>
+    <jsp:useBean id="prodottoOld" scope="request" class="com.example.demoservlet.model.ProdottoOld" />
 </head>
 <body>
-<jsp:getProperty name="prodotto" property="id"/>,
-<jsp:getProperty name="prodotto" property="nome"/>,
-<jsp:getProperty name="prodotto" property="prezzo"/>
+<jsp:getProperty name="prodottoOld" property="id"/>,
+<jsp:getProperty name="prodottoOld" property="nome"/>,
+<jsp:getProperty name="prodottoOld" property="prezzo"/>
 </body>
 </html>

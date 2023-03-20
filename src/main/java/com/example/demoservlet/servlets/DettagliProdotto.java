@@ -1,6 +1,6 @@
 package com.example.demoservlet.servlets;
 
-import com.example.demoservlet.model.Prodotto;
+import com.example.demoservlet.model.ProdottoOld;
 import jakarta.annotation.Resource;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -22,23 +22,23 @@ public class DettagliProdotto extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idstr = request.getParameter("idp");
         int pid  = Integer.parseInt(idstr);
-        Prodotto prodotto = getProdotto(pid);
-        request.setAttribute("prodotto", prodotto);
+        ProdottoOld prodottoOld = getProdotto(pid);
+        request.setAttribute("prodotto", prodottoOld);
         gotoPage("/dettagliprodotto.jsp",request,response);
     }
 
-    private Prodotto getProdotto(int pid) {
+    private ProdottoOld getProdotto(int pid) {
         Connection con = null;
         Statement st = null;
         ResultSet rs = null;
-        Prodotto p = null;
+        ProdottoOld p = null;
         try {
             con = ds.getConnection();
             st = con.createStatement();
             rs = st.executeQuery("select id, nome, prezzo from prodotti where id ="+pid);
 
             if (rs.next()) {
-                p = new Prodotto(rs.getInt(1),rs.getString(2),rs.getDouble(3));
+                p = new ProdottoOld(rs.getInt(1),rs.getString(2),rs.getDouble(3));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
