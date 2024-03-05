@@ -19,6 +19,17 @@ public class HelloServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
+        out.println("<html><body>");
+        out.println("<h1>" + message + "</h1>");
+        out.println("</body></html>");
+    }
+
+    public void destroy() {
+    }
+
+    /*
+        public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html");
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
         EntityManager em = emf.createEntityManager();
 
@@ -39,7 +50,5 @@ public class HelloServlet extends HttpServlet {
         em.getTransaction().commit();
         out.println("</body></html>");
     }
-
-    public void destroy() {
-    }
+     */
 }
