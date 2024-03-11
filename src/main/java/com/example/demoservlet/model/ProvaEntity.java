@@ -3,7 +3,7 @@ package com.example.demoservlet.model;
 import jakarta.persistence.*;
 
 @Entity
-@NamedQueries({@NamedQuery(name="getProva", query="select c from Ordine c")})
+@NamedQueries({@NamedQuery(name="getProva", query="select p from ProvaEntity p")})
 public class ProvaEntity {
     @Id
     @GeneratedValue

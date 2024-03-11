@@ -11,5 +11,6 @@
 <a href="hello-servlet">Hello Servlet</a>
 <a href="Prodotti">Prodotti Servlet</a>
 <a href="ProdottiMVC">Prodotti MVCServlet</a>
+<a href="jpa-servlet">Esempio JPA</a>
 </body>
 </html>
